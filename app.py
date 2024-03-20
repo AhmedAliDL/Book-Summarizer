@@ -54,7 +54,7 @@ def get_summarize_text(chunks):
 def main():
     st.title("Book Summarizer")
     if "summarizer" not in st.session_state:
-        st.session_state.summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum", device="cuda")
+        st.session_state.summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
     files = st.file_uploader("Upload book:", type=["pdf"], accept_multiple_files=True)
     gen = st.button("Generate")
     if files:
